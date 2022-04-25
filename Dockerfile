@@ -6,7 +6,7 @@ WORKDIR /INTOT
 COPY ./requirements.txt .
 
 #this runs when image is built
-#RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt
 
 COPY INTOT .
 
