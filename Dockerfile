@@ -1,0 +1,15 @@
+
+FROM python
+
+WORKDIR /*
+# We copy just the requirements.txt first to leverage Docker cache
+COPY ./requirements.txt .
+
+#this runs when image is built
+RUN pip install -r requirements.txt
+
+COPY INTOT .
+
+EXPOSE 5000
+
+ENTRYPOINT [ "python" ," INTOT " ]
